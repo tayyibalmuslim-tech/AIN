@@ -3,124 +3,929 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المقدمة — أين الطريق</title>
+<title>الجاهلية الأولى: كيف يُخرج الله الناس من الظلمات إلى النور</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --night:#161B22;
-    --night-2:#1F2630;
-    --gold:#C9A15C;
-    --gold-soft:#E8CE9A;
-    --olive:#4A5D45;
-    --ivory:#F0EAD8;
-    --ivory-dim:#B9B2A0;
-    --line:#2E3642;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--night);
-    color:var(--ivory);
-    font-family:'Tajawal',sans-serif;
-    line-height:1.9;
-    min-height:100vh;
-  }
-  h1,.eyebrow{font-family:'Amiri',serif;}
+:root{
+  --gold:#c9a227;
+  --gold-light:#e8d38a;
+  --brown-dark:#2b1d10;
+  --brown:#4a3620;
+  --brown-light:#7a5c38;
+  --green:#1f5c3f;
+  --green-light:#2f7d57;
+  --cream:#faf6ec;
+  --paper:#fffdf7;
+  --ink:#2a2318;
+  --muted:#6b5f4a;
+  --border:#e3d6b4;
+  --shadow: 0 8px 24px rgba(43,29,16,0.12);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Cairo', sans-serif;
+  background: linear-gradient(180deg,#f5efdd 0%, #f7f2e4 100%);
+  color:var(--ink);
+  line-height:1.9;
+}
+.pattern-strip{
+  height:10px;
+  background: repeating-linear-gradient(135deg, var(--gold) 0 10px, var(--green) 10px 20px, var(--brown) 20px 30px);
+  opacity:.85;
+}
+header.hero{
+  position:relative;
+  background: radial-gradient(circle at 30% 20%, #3a2716 0%, var(--brown-dark) 60%, #1c1209 100%);
+  color:var(--cream);
+  padding:56px 24px 44px;
+  text-align:center;
+  overflow:hidden;
+}
+header.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(201,162,39,0.15) 0, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(31,92,63,0.25) 0, transparent 45%);
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-block;
+  font-family:'Amiri', serif;
+  color:var(--gold-light);
+  border:1px solid var(--gold);
+  border-radius:999px;
+  padding:6px 20px;
+  font-size:.95rem;
+  letter-spacing:.5px;
+  margin-bottom:18px;
+  background:rgba(201,162,39,0.08);
+}
+h1.title{
+  font-family:'Amiri', serif;
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--gold-light);
+  text-shadow:0 2px 12px rgba(0,0,0,.4);
+  max-width:820px;
+  margin:0 auto 14px;
+  line-height:1.5;
+}
+.subtitle{
+  font-size:1.05rem;
+  color:#e9dfc4;
+  max-width:640px;
+  margin:0 auto 26px;
+  opacity:.9;
+}
+.hero-meta{
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:26px;
+}
+.badge{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(201,162,39,0.4);
+  color:var(--gold-light);
+  padding:6px 16px;
+  border-radius:999px;
+  font-size:.85rem;
+}
+.btn-anki{
+  display:inline-flex; align-items:center; gap:10px;
+  background:linear-gradient(135deg, var(--gold) 0%, #a9820f 100%);
+  color:#241705;
+  font-weight:700;
+  padding:14px 30px;
+  border-radius:12px;
+  border:none;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  transition:transform .15s ease, box-shadow .15s ease;
+  font-family:'Cairo', sans-serif;
+}
+.btn-anki:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.4); }
 
-  .top-nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 32px;
-    border-bottom:1px solid var(--line);
-    font-size:.95rem;
-  }
-  .top-nav a{
-    color:var(--gold-soft);
-    text-decoration:none;
-  }
-  .top-nav a:hover{ color:var(--gold); }
+nav.toc{
+  max-width:920px;
+  margin:-30px auto 40px;
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:26px 30px;
+  position:relative;
+  z-index:2;
+}
+nav.toc h2{
+  font-family:'Amiri', serif;
+  color:var(--brown);
+  font-size:1.3rem;
+  margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+nav.toc ol{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:10px;
+}
+nav.toc a{
+  display:block;
+  color:var(--brown);
+  text-decoration:none;
+  background:var(--cream);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:.92rem;
+  transition:background .15s ease, border-color .15s ease;
+}
+nav.toc a:hover{ background:#f0e6c8; border-color:var(--gold); }
 
-  header{
-    text-align:center;
-    padding:70px 20px 50px;
-    background:radial-gradient(ellipse at top, rgba(201,161,92,.12), transparent 60%);
-    border-bottom:1px solid var(--line);
-  }
-  .eyebrow{
-    display:inline-block;
-    color:var(--gold);
-    font-size:.95rem;
-    letter-spacing:.15em;
-    margin-bottom:14px;
-    opacity:.85;
-  }
-  header h1{
-    font-size:clamp(2rem,5vw,3rem);
-    color:var(--gold-soft);
-    font-weight:700;
-  }
+main{ max-width:920px; margin:0 auto; padding:0 20px 60px; }
 
-  main{
-    max-width:760px;
-    margin:0 auto;
-    padding:70px 24px;
-  }
-  .placeholder{
-    border:1.5px dashed var(--line);
-    border-radius:14px;
-    padding:60px 30px;
-    text-align:center;
-    color:var(--ivory-dim);
-  }
-  .placeholder .icon{
-    font-size:2rem;
-    color:var(--gold);
-    margin-bottom:16px;
-  }
-  .placeholder p{ max-width:420px; margin:0 auto; }
+section.lecture{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:34px 30px;
+  margin-bottom:34px;
+  scroll-margin-top:20px;
+}
+.lecture-head{
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:20px;
+  padding-bottom:16px;
+  border-bottom:2px dashed var(--border);
+}
+.lecture-num{
+  flex-shrink:0;
+  width:52px; height:52px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Amiri', serif;
+  font-size:1.4rem;
+  font-weight:700;
+  box-shadow:0 4px 10px rgba(31,92,63,.3);
+}
+.lecture-head h2{
+  font-family:'Amiri', serif;
+  color:var(--brown-dark);
+  font-size:1.5rem;
+}
+.lecture-head .icon{ font-size:1.3rem; margin-left:6px; }
 
-  .bottom-nav{
-    display:flex; justify-content:space-between;
-    max-width:760px;
-    margin:0 auto;
-    padding:0 24px 80px;
-    font-size:.95rem;
-  }
-  .bottom-nav a{
-    color:var(--ivory-dim);
-    text-decoration:none;
-    border:1px solid var(--line);
-    padding:10px 18px;
-    border-radius:8px;
-    transition:border-color .2s ease, color .2s ease;
-  }
-  .bottom-nav a:hover{
-    border-color:var(--gold);
-    color:var(--gold-soft);
-  }
+h3.section-title{
+  font-family:'Amiri', serif;
+  color:var(--green);
+  font-size:1.2rem;
+  margin:28px 0 14px;
+  display:flex; align-items:center; gap:8px;
+}
+h3.section-title::before{
+  content:"";
+  width:6px; height:22px;
+  background:var(--gold);
+  border-radius:3px;
+  display:inline-block;
+}
+p{ margin-bottom:14px; color:var(--ink); }
+
+.definition-box{
+  background:#f4f9f5;
+  border-right:4px solid var(--green);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+}
+.definition-box .term{
+  font-weight:800;
+  color:var(--green);
+  display:block;
+  margin-bottom:6px;
+  font-family:'Amiri', serif;
+  font-size:1.05rem;
+}
+
+.evidence-block, .quote-block{
+  background:#fbf7ec;
+  border:1px solid var(--gold-light);
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+  padding:18px 22px;
+  margin:16px 0;
+  font-family:'Amiri', serif;
+  color:var(--brown-dark);
+  font-size:1.08rem;
+  position:relative;
+}
+.evidence-block .ref, .quote-block .ref{
+  display:block;
+  margin-top:10px;
+  font-family:'Cairo', sans-serif;
+  font-size:.85rem;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.key-point{
+  background:#eef6f0;
+  border-radius:10px;
+  padding:14px 18px;
+  margin:12px 0;
+  display:flex; align-items:flex-start; gap:12px;
+}
+.key-point .kp-icon{
+  flex-shrink:0;
+  color:var(--green);
+  font-size:1.2rem;
+}
+
+.warning-box{
+  background:#fbeeee;
+  border:1px solid #e8b8b8;
+  border-right:4px solid #b03a3a;
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+}
+.warning-box .wb-title{
+  font-weight:800;
+  color:#8f2c2c;
+  display:block;
+  margin-bottom:6px;
+}
+
+.comparison-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0;
+  font-size:.95rem;
+  overflow:hidden;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.comparison-table th{
+  background:var(--brown);
+  color:var(--gold-light);
+  padding:12px 14px;
+  text-align:right;
+  font-family:'Amiri', serif;
+}
+.comparison-table td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--border);
+  background:var(--paper);
+}
+.comparison-table tr:nth-child(even) td{ background:#f8f3e4; }
+
+.flow-list{
+  list-style:none;
+  counter-reset:flow;
+  margin:16px 0;
+}
+.flow-list li{
+  counter-increment:flow;
+  position:relative;
+  padding:12px 50px 12px 14px;
+  margin-bottom:8px;
+  background:var(--cream);
+  border-radius:10px;
+  border:1px solid var(--border);
+}
+.flow-list li::before{
+  content: counter(flow);
+  position:absolute;
+  left:14px; top:50%; transform:translateY(-50%);
+  width:28px; height:28px;
+  background:var(--gold);
+  color:#241705;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:.9rem;
+}
+
+.example-box{
+  background:#fffaf0;
+  border:1px dashed var(--gold);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:14px 0;
+  font-size:.95rem;
+  color:var(--brown-dark);
+}
+.example-box .ex-title{ font-weight:700; color:var(--brown); }
+
+.action-card{
+  background:linear-gradient(135deg,#f4f9f5 0%, #eef6f0 100%);
+  border:1px solid #cfe3d4;
+  border-radius:12px;
+  padding:16px 20px;
+  margin:16px 0;
+}
+.action-card .ac-title{
+  font-weight:800;
+  color:var(--green);
+  margin-bottom:6px;
+  display:block;
+}
+
+.lecture-summary{
+  background:var(--brown-dark);
+  color:var(--cream);
+  border-radius:14px;
+  padding:22px 26px;
+  margin-top:24px;
+}
+.lecture-summary h4{
+  font-family:'Amiri', serif;
+  color:var(--gold-light);
+  margin-bottom:10px;
+  font-size:1.1rem;
+}
+
+.anki-inline{
+  text-align:center;
+  margin:26px 0 6px;
+}
+.btn-anki-small{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--green);
+  color:#fff;
+  font-weight:700;
+  padding:10px 22px;
+  border-radius:10px;
+  border:none;
+  font-size:.9rem;
+  cursor:pointer;
+  font-family:'Cairo', sans-serif;
+}
+.btn-anki-small:hover{ background:var(--green-light); }
+
+footer{
+  background: radial-gradient(circle at 50% 0%, #2c4a37 0%, var(--brown-dark) 70%);
+  color:var(--cream);
+  text-align:center;
+  padding:50px 24px 40px;
+  margin-top:20px;
+}
+footer .dua{
+  font-family:'Amiri', serif;
+  font-size:1.3rem;
+  color:var(--gold-light);
+  max-width:700px;
+  margin:0 auto 20px;
+  line-height:2;
+}
+footer .final-anki{ margin-top:20px; }
+footer .credit{
+  margin-top:30px;
+  font-size:.8rem;
+  color:#a99a7a;
+}
+
+@media (max-width:640px){
+  h1.title{ font-size:1.7rem; }
+  section.lecture{ padding:22px 18px; }
+  nav.toc{ margin-top:-20px; padding:20px; }
+}
 </style>
 </head>
 <body>
 
-<nav class="top-nav">
-  <a href="../index.html">→ العودة لفهرس السلسلة</a>
-  <span style="color:var(--ivory-dim)">أين الطريق</span>
-</nav>
+<div class="pattern-strip"></div>
 
-<header>
-  <span class="eyebrow">افتتاحية السلسلة</span>
-  <h1>المقدمة</h1>
+<header class="hero">
+  <span class="eyebrow">✦ سلسلة: من الظلمات إلى النور ✦</span>
+  <h1 class="title">الجاهلية الأولى: كيف يُخرج الله الناس من الظلمات إلى النور</h1>
+  <p class="subtitle">
+    تلخيص شامل لخمس محاضرات تشرح حقيقة الجاهلية الأولى، وكيف تحوّل أهلها إلى خير أمة أُخرجت للناس،
+    وما يترتب على ذلك من دروس لكل مسلم اليوم.
+  </p>
+  <div class="hero-meta">
+    <span class="badge">📖 محتوى شرعي دعوي</span>
+    <span class="badge">🗂️ 5 محاضرات مُلخّصة</span>
+    <span class="badge">🕌 الخطوة رقم صفر: المقدمة</span>
+  </div>
+  <button class="btn-anki" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
 </header>
 
+<nav class="toc" id="toc">
+  <h2>📑 محتويات السلسلة</h2>
+  <ol>
+    <li><a href="#l1">١. حقيقة الجاهلية الأولى: العقول والقلوب</a></li>
+    <li><a href="#l2">٢. الجاهلية منهج متكرر لا مرحلة منتهية</a></li>
+    <li><a href="#l3">٣. جاهليات الأمم السابقة ودروسها</a></li>
+    <li><a href="#l4">٤. النتيجة: خير أمة أُخرجت للناس</a></li>
+    <li><a href="#l5">٥. أثر النور على الدنيا كلها</a></li>
+  </ol>
+</nav>
+
 <main>
-  <div class="placeholder">
-    <div class="icon">◈</div>
-    <p>هذه الصفحة جاهزة الآن كإطار فارغ — أضف محتوى هذه الحلقة هنا لاحقًا.</p>
+
+<!-- ============ المحاضرة 1 ============ -->
+<section class="lecture" id="l1">
+  <div class="lecture-head">
+    <div class="lecture-num">١</div>
+    <h2><span class="icon">🌑</span> حقيقة الجاهلية الأولى: العقول والقلوب</h2>
   </div>
+
+  <p>يفتتح المحاضر السلسلة بالتذكير بأن رابطة الإيمان بين المسلمين هي عاطفة يحبها الله ويسميها "دينًا"، مستشهدًا بحديث "يُحشر المرء مع من أحب" ليبيّن أن الصحابة أحبوا هذا الحديث لأنهم لا يطيقون فراق النبي ﷺ، لا لمجرد الرغبة في مرتبته العالية.</p>
+
+  <h3 class="section-title">الفكرة المحورية للسلسلة</h3>
+  <div class="key-point">
+    <span class="kp-icon">🔑</span>
+    <div>الأمة الإسلامية "مفاجأة" في التاريخ البشري: خرجت من جيل واحد بعينه، في فارق زمني لا يتجاوز 23 سنة، من وصف "الجاهلية العمياء" إلى وصف "خير أمة أُخرجت للناس". السؤال المحوري: ما الذي انقلب في هؤلاء الأشخاص؟</div>
+  </div>
+
+  <div class="definition-box">
+    <span class="term">الجاهلية الأولى</span>
+    المصطلح القرآني الذي يصف حال العرب قبل بعثة النبي ﷺ؛ وهي ليست مجرد "عبادة أصنام" بل منظومة متكاملة من فساد العقيدة، وقسوة القلوب، والانحلال الأخلاقي، والظلم الاجتماعي والاقتصادي.
+  </div>
+
+  <h3 class="section-title">فساد العقول: عبادة الحجر والصنم</h3>
+  <p>كانت عقولهم تصنع آلهتها بيدها: يختار أحدهم حجرًا من الصحراء، ينحته تمثالًا، فإذا انتهى منه سجد له وقال "هذا ربي". هذه الظاهرة ليست حكرًا على الجاهلية العربية، بل استمرت في صور أخرى عبر التاريخ حتى اليوم.</p>
+
+  <div class="example-box">
+    <span class="ex-title">مثال معاصر:</span> يذكر المحاضر أن عبادة الأبقار ما زالت قائمة في الهند حتى اليوم، وأن جماعات تأتي سنويًا من أمريكا لتؤدي طقوسًا أمام الهرم الأكبر في مصر اعتقادًا منها أن فيه "سر الحياة" — دليل على أن انحراف العقل عن التوحيد لم ينتهِ بانتهاء الجاهلية الأولى.
+  </div>
+
+  <h3 class="section-title">قسوة القلوب: وأد البنات</h3>
+  <p>لم تكن الجاهلية مجرد فكر فاسد، بل قسوة قلب حقيقية. كان الأب يخرج بابنته الرضيعة إلى الصحراء، يحفر حفرة، ويدفنها فيها حية وهي تتنفس، حاشيًا فمها وأنفها بالرمل.</p>
+
+  <div class="warning-box">
+    <span class="wb-title">⚠️ لماذا نذكر هذا التفصيل؟</span>
+    الهدف ليس الإثارة، بل إدراك حجم التحول الذي أحدثه الإسلام: من قلب يقتل ابنته بيده إلى قلب يوصف بأنه من "أهل التقوى" — وهذا هو جوهر السؤال الذي تجيب عنه السلسلة.
+  </div>
+
+  <h3 class="section-title">قاعدة الظلم: "الضعيف مأكول"</h3>
+  <p>كانت الجاهلية تقوم على مبدأ أن القوة هي معيار الحق، لا العكس. من كان ضعيفًا فهو "مأكول" بالضرورة. يستشهد المحاضر ببيت شعري جاهلي يفتخر بهذا المبدأ صراحة: "ونشرب إن وردنا الماء صفوًا... ويشرب غيرنا كدرًا وطينًا".</p>
+
+  <div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <tr><th>المعيار</th><th>قاعدة الجاهلية</th><th>قاعدة الإسلام (بعد التحول)</th></tr>
+      <tr><td>مصدر الحق</td><td>القوة والغلبة</td><td>العدل بصرف النظر عن القوة</td></tr>
+      <tr><td>موقف القوي من الضعيف</td><td>"القوي فيكم أظلم عندي"</td><td>"الضعيف فيكم قوي عندي حتى آخذ الحق له" (أبو بكر)</td></tr>
+      <tr><td>رد المظلمة</td><td>يُرفض ولو كان الظالم زعيمًا (كأبي جهل)</td><td>يُطلب حتى لو أدى لمواجهة الزعماء</td></tr>
+    </table>
+  </div>
+
+  <h3 class="section-title">قصة أبي جهل ورد الحق</h3>
+  <p>يروي المحاضر واقعة أن رجلًا طالب أبا جهل برد ماله فرفض، فاستغاث بأشراف قريش الذين سخروا منه، فأرشدوه إلى النبي ﷺ الذي ذهب بنفسه وطرق باب أبي جهل وطلب منه رد الحق، فامتثل أبو جهل من هيبة الموقف.</p>
+
+  <div class="evidence-block">
+    قال النبي ﷺ لأبي جهل: «رُدَّ لهذا الرجل حقه» — فأخذه أبو جهل بشدة وقال: «أفعل، أفعل يا محمد».
+    <span class="ref">من سيرة النبي ﷺ كما رواها المحاضر</span>
+  </div>
+
+  <h3 class="section-title">حِلف الفضول: العدالة من أجل المصلحة لا المبدأ</h3>
+  <p>لما اتفقت قريش أن الظلم يضر باقتصادها القائم على السياحة والتجارة، اجتمعوا على "حِلف الفضول" لمنع أخذ حق أحد بالباطل — لكن الدافع كان مصلحيًا اقتصاديًا بحتًا، وليس التزامًا أخلاقيًا حقيقيًا. هذا يفسر كيف بقيت قواعد الظلم الأخرى (كالاسترقاق) قائمة رغم هذا الحلف.</p>
+
+  <h3 class="section-title">الفراغ الفكري: الشعر والقبيلة كمشروع حياة</h3>
+  <p>يصف المحاضر أن جزءًا كبيرًا من "عبقرية" العرب الأدبية كان موجهًا للفراغ: قصائد طويلة تبدأ بالغزل مهما كان الموضوع، ومصطلح "بيت القصيد" نفسه (البيت الوحيد المهم في قصيدة طويلة) يعكس هذا الإسهاب بلا مضمون حقيقي.</p>
+
+  <div class="key-point">
+    <span class="kp-icon">💡</span>
+    <div>مقدساتهم الفكرية كانت "سوق عكاظ" (المؤتمر الأدبي الكبير) حيث يفتخر المتحدث بسلسلة آبائه وأمجادهم القبلية، لا بقيم أو أفكار بنّاءة — حتى جاء حديث النبي ﷺ عمن ذكر سبعة من آبائه فقال: «لقد ذكر سبعة من آباء كلهم في النار».</div>
+  </div>
+
+  <h3 class="section-title">رفض الحق رغم معرفته</h3>
+  <p>الفرق الجوهري بين "عدم العلم" و"الجهل" هو ما يركز عليه المحاضر: كثيرون في الجاهلية عرفوا الحق ورفضوه، مثل أبي طالب الذي مات وهو موقن بصدق النبي ﷺ لكنه رفض أن يقول "لا إله إلا الله" خشية عار "ترك دين آبائه" أمام قومه.</p>
+
+  <div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <tr><th>الشخصية</th><th>موقفه من الحق</th><th>النتيجة</th></tr>
+      <tr><td>أبو طالب</td><td>عرف صدق النبي ﷺ يقينًا لكن رفض النطق بالشهادة خوفًا من عار الخروج عن دين الآباء</td><td>مات على الكفر</td></tr>
+      <tr><td>إبليس</td><td>اعترف بربوبية الله صراحة ("فبعزتك لأغوينهم")</td><td>معرفة بلا استسلام = كفر</td></tr>
+      <tr><td>الرجل الذي حاول رشوة النبي ﷺ</td><td>سمع أول سورة "فصلت" فأدرك أنه ليس كلام بشر</td><td>عاد لقومه معترفًا أن الكلام "لا يشبه كلام البشر"</td></tr>
+    </table>
+  </div>
+
+  <h3 class="section-title">الفساد الأخلاقي: بيوت الدعارة والعري حول الكعبة</h3>
+  <p>لم تكن الجاهلية عبادة أصنام فقط، بل مجتمعًا فيه بيوت دعارة معلنة (بعلامة مميزة فوق البيت)، وكان الناس يطوفون حول الكعبة عراة اعتقادًا بأن ذلك يقربهم من الله. كذلك كانت أنواع "الزواج" الجاهلي أربعة أصناف، بعضها لا يمت للزواج بصلة الإسلام إطلاقًا (كتعدد الشركاء دون قيد أو تحديد نسب الأب).</p>
+
+  <div class="warning-box">
+    <span class="wb-title">⚠️ ملاحظة أدبية عن الأصل</span>
+    المحاضر يذكر هذه التفاصيل تحديدًا لبيان حجم التحول لا للتشهير، وأكد أنها موثقة في مصادر السيرة والحديث النبوي الأصيلة.
+  </div>
+
+  <h3 class="section-title">البذاءة والخمر وأثرهما على المجتمع</h3>
+  <p>كان من علامات الجاهلية أيضًا البذاءة اللفظية العلنية، وإدمان الخمر لدرجة أن بعضهم "لا يفيق"، حتى إن شوارع المدينة سالت بالخمر يوم تحريمها لكثرة ما أُريق منها.</p>
+
+  <h3 class="section-title">الكسب الحرام وعجز بناء الكعبة</h3>
+  <p>المفارقة الصادمة: عجزت قريش كلها عن إيجاد مال حلال كافٍ لإعادة بناء الكعبة (بيت الله!) فبُنيت من حجارة بسيطة بدل الرخام، لأن كل ثروات المدينة كانت متأتية من الربا والقمار وأرباح بيوت الدعارة والسرقة.</p>
+
+  <div class="lecture-summary">
+    <h4>📌 خلاصة المحاضرة الأولى</h4>
+    <p>الجاهلية الأولى لم تكن مجرد "عبادة أصنام" سطحية، بل منظومة متكاملة من فساد العقل (عبادة المصنوع)، وقسوة القلب (وأد البنات)، وظلم اجتماعي مبني على القوة، وفراغ فكري، وانحلال أخلاقي، وفساد اقتصادي شامل. هذا هو "قبل" الذي سنقارن به "بعد" في المحاضرات القادمة.</p>
+  </div>
+
+  <div class="anki-inline">
+    <button class="btn-anki-small" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</section>
+
+<!-- ============ المحاضرة 2 ============ -->
+<section class="lecture" id="l2">
+  <div class="lecture-head">
+    <div class="lecture-num">٢</div>
+    <h2><span class="icon">🔄</span> الجاهلية منهج متكرر لا مرحلة منتهية</h2>
+  </div>
+
+  <p>ينبه المحاضر إلى خطأ شائع جدًا: تصور أن الجاهلية "مرحلة تاريخية انتهت" وأن الحديث عنها هو "كلام من بطون الكتب". القرآن والسنة يؤكدان أن الجاهلية <strong>منهج قد يعود</strong>، لا حادثة تاريخية مغلقة.</p>
+
+  <div class="key-point">
+    <span class="kp-icon">🔑</span>
+    <div>دليل لغوي دقيق: حين يقول الله "ولا تبرجن تبرج الجاهلية <strong>الأولى</strong>"، فإن كلمة "الأولى" لا معنى لها إلا إذا كان يمكن أن تكون هناك جاهلية "ثانية" أو لاحقة تعود من جديد.</div>
+  </div>
+
+  <h3 class="section-title">أدلة عودة الجاهلية من السنة النبوية</h3>
+
+  <div class="evidence-block">
+    «لن تقوم الساعة حتى يُعبد اللات والعزى» — إشارة إلى أن الشرك القديم (بأسمائه القديمة تحديدًا) قد يعود من جديد قبل قيام الساعة.
+    <span class="ref">حديث نبوي، مذكور في المحاضرة</span>
+  </div>
+
+  <div class="evidence-block">
+    «لن تقوم الساعة إلا على قوم هم شرار الناس، يتهارجون فيها تهارج الحُمُر» — تصوير لانتشار الفجور والزنا والظلم في آخر الزمان، تشبيهًا بتهارج الحمير عشوائيًا دون ضابط.
+    <span class="ref">حديث نبوي</span>
+  </div>
+
+  <div class="evidence-block">
+    «لن تقوم الساعة حتى لا يبقى على ظهر الأرض أحد يقول: الله الله» — حديث في صحيح مسلم، وله تفسيران مكملان: إما غياب التوحيد الكامل، وإما غياب الأمر بالمعروف والنهي عن المنكر. وكلاهما صورة من صور عودة الظلمات.
+    <span class="ref">صحيح مسلم</span>
+  </div>
+
+  <div class="definition-box">
+    <span class="term">فتنة كقطع الليل المظلم</span>
+    وصف نبوي لحالة يتقلب فيها الإيمان بسرعة شديدة: "يُصبح الرجل فيها مؤمنًا ويُمسي كافرًا" — مثال معاصر ذكره المحاضر: من يعمل في بنك ربوي نهارًا ثم يصلي المغرب والعشاء في المسجد مساءً، فهو يجمع بين الكفر والإيمان في يوم واحد.
+  </div>
+
+  <h3 class="section-title">"فيك جاهلية" — حتى للصحابي المسلم</h3>
+  <p>المحاضر يبرز نقطة دقيقة: النبي ﷺ قال لأحد كبار الصحابة الموحدين: «إنك امرؤ فيك جاهلية» — وهذا يثبت أن صفات الجاهلية قد تتسلل إلى قلب المسلم الموحّد نفسه، وليست حكرًا على الكافر.</p>
+
+  <div class="warning-box">
+    <span class="wb-title">⚠️ علامات النفاق التي قد تتسلل للمسلم</span>
+    الحديث الشريف: «ثلاث من كنّ فيه كان منافقًا خالصًا، ومن كانت فيه خصلة منهنّ كانت فيه خصلة من النفاق حتى يدَعها». هذا يعني أن المسلم قد تأتيه صفة واحدة من صفات الجاهلية أو النفاق فتسكن قلبه دون أن يكفر بها بالكامل، لكنها خطر حقيقي يجب الانتباه له.
+  </div>
+
+  <div class="action-card">
+    <span class="ac-title">✅ التطبيق العملي</span>
+    الخلاصة ليست "التاريخ القديم انتهى وارتحنا"، بل: راقب قلبك الآن — فالجاهلية ليست حكاية بل احتمال قائم في كل زمان ومكان، بما في ذلك داخل قلب المسلم الملتزم ظاهريًا.
+  </div>
+
+  <div class="lecture-summary">
+    <h4>📌 خلاصة المحاضرة الثانية</h4>
+    <p>الجاهلية ليست مرحلة تاريخية مغلقة، بل "منهج" يمكن أن يعود في أي زمان، وقد يتسلل بعض صفاته حتى إلى قلب المسلم الموحّد. هذا يمهّد لفهم أعمق: إذا كان التحول من الجاهلية للنور حدث مرة، فلا بد أن نفهم آليته لنطبقها على أنفسنا اليوم.</p>
+  </div>
+
+  <div class="anki-inline">
+    <button class="btn-anki-small" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</section>
+
+<!-- ============ المحاضرة 3 ============ -->
+<section class="lecture" id="l3">
+  <div class="lecture-head">
+    <div class="lecture-num">٣</div>
+    <h2><span class="icon">📜</span> جاهليات الأمم السابقة ودروسها</h2>
+  </div>
+
+  <p>يوسّع المحاضر الصورة: الجاهلية ليست خاصة بعرب الجزيرة، بل القرآن يتحدث عن أنماط جاهلية متعددة عند أمم سابقة، لكل منها درس مختلف يُبنى عليه فهم أعمق لطبيعة الانحراف الإنساني.</p>
+
+  <h3 class="section-title">قوم عاد: الغرور بالقوة والبنيان</h3>
+  <p>كان قوم عاد (النبي هود عليه السلام) يبنون قلاعًا ضخمة على كل مرتفع لا لحاجة، بل للتباهي والتزيين ("لعلكم تخلدون")، مع بطش شديد بالناس ("وإذا بطشتم بطشتم جبارين").</p>
+
+  <div class="evidence-block">
+    «أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِعَادٍ. إِرَمَ ذَاتِ الْعِمَادِ. الَّتِي لَمْ يُخْلَقْ مِثْلُهَا فِي الْبِلَادِ»
+    <span class="ref">سورة الفجر</span>
+  </div>
+
+  <div class="example-box">
+    <span class="ex-title">تعليق المحاضر:</span> يشبّه المحاضر وصف "لم يُخلق مثلها في البلاد" بالحضارات الحديثة الضخمة (كأمريكا) التي قد تصل إلى قوة تُغري بالطغيان، مما يجعل القصة تذكيرًا معاصرًا لا مجرد حكاية قديمة.
+  </div>
+
+  <h3 class="section-title">قوم ثمود: إضاعة العمر في الترف بلا هدف</h3>
+  <p>نحتوا بيوتًا فاخرة داخل الجبال نفسها (بتكييف وتهوية طبيعية) رغم عدم الحاجة الفعلية لذلك — إضاعة أعمارهم بالكامل في مشاريع ترفية بلا طائل، وهو ما نهاهم عنه النبي صالح عليه السلام.</p>
+
+  <h3 class="section-title">قوم يوسف عليه السلام: فساد المجتمع النسائي المترف</h3>
+  <p>قصة "امرأة العزيز" ليست فردية، بل يصورها القرآن كظاهرة مجتمعية: عندما انتشر الخبر بين نساء المدينة، اجتمعن ودافعن عن فعلها باعتباره طبيعيًا ومبررًا، مما يكشف عن ثقافة مجتمعية متواطئة لا مجرد خطأ فردي.</p>
+
+  <h3 class="section-title">قوم لوط: الانحراف الجنسي الجماعي</h3>
+  <p>يذكر المحاضر أن القرآن يتحدث عن قوم لوط بوصفهم مجتمعًا كاملاً منحرفًا، ثم يربط ذلك بصورة معاصرة صادمة: مسارح في بعض العواصم الأوروبية يُمارَس فيها الفعل الجنسي علنًا أمام الجمهور، ليبيّن أن هذا النمط من الانحراف ليس حكرًا على الأولين.</p>
+
+  <h3 class="section-title">قوم شعيب (أصحاب الأيكة): جاهلية اقتصادية</h3>
+  <p>تتمثل في التلاعب بالموازين والمكاييل خداعًا للناس. القرآن يخاطبهم مباشرة بالنهي عن هذا الظلم الاقتصادي.</p>
+
+  <div class="evidence-block">
+    «وَأَوْفُوا الْكَيْلَ وَلَا تَكُونُوا مِنَ الْمُخْسِرِينَ، وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ، وَلَا تَبْخَسُوا النَّاسَ أَشْيَاءَهُمْ، وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ»
+    <span class="ref">سورة الشعراء (كما وردت في المحاضرة)</span>
+  </div>
+
+  <h3 class="section-title">مكانة المرأة قبل الإسلام: "كنا لا نرى النساء شيئًا"</h3>
+  <p>يستشهد المحاضر بشهادة صحابي مباشرة: أهل مكة كانوا يحتقرون النساء تمامًا حتى هاجروا للمدينة ووجدوا أهلها يُكرمون نساءهم. كذلك لم يكن للمرأة ميراث ولا زينة ولا اعتبار في الجاهلية.</p>
+
+  <div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <tr><th>الجانب</th><th>وضع المرأة في الجاهلية</th><th>وضعها بعد الإسلام</th></tr>
+      <tr><td>الميراث</td><td>لا ميراث للمرأة إطلاقًا</td><td>ميراث مفروض شرعًا، وقد تُقدَّم حصتها على القريب الرجل حسب درجة القرابة</td></tr>
+      <tr><td>الرأي والاعتبار</td><td>"كنا لا نرى للنساء شيئًا"</td><td>تُستشار وتُسمع كلمتها (كموقف السيدة التي أجارت رجلًا وأقرّها النبي ﷺ)</td></tr>
+      <tr><td>الوأد</td><td>البنت تُدفن حية عند الولادة أحيانًا</td><td>تحريم قطعي لوأد البنات، وتكريم صريح للمرأة</td></tr>
+    </table>
+  </div>
+
+  <div class="lecture-summary">
+    <h4>📌 خلاصة المحاضرة الثالثة</h4>
+    <p>الجاهلية ليست ظاهرة واحدة بل عدة أنماط متكررة عبر الأمم: الغرور بالقوة (عاد)، إضاعة العمر بلا هدف (ثمود)، فساد المجتمع النسائي (يوسف)، الانحراف الجنسي الجماعي (لوط)، والفساد الاقتصادي (شعيب). ومكانة المرأة كانت من أوضح مقاييس هذا الانحراف، وأوضح صور التحول بعد الإسلام.</p>
+  </div>
+
+  <div class="anki-inline">
+    <button class="btn-anki-small" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</section>
+
+<!-- ============ المحاضرة 4 ============ -->
+<section class="lecture" id="l4">
+  <div class="lecture-head">
+    <div class="lecture-num">٤</div>
+    <h2><span class="icon">🌟</span> النتيجة: خير أمة أُخرجت للناس</h2>
+  </div>
+
+  <p>بعد وصف الجاهلية بكل قبحها، يعرض المحاضر المفارقة العظمى: نفس هؤلاء الأشخاص وصفهم القرآن بأنهم "كالأنعام بل هم أضل"، ثم في خلال سنوات قليلة (خمس إلى عشر سنوات) وصفهم الله بـ"خير أمة أُخرجت للناس".</p>
+
+  <div class="key-point">
+    <span class="kp-icon">🔑</span>
+    <div>هذا ليس مجرد مدح من النبي ﷺ، بل من الله سبحانه الذي يعلم السر وأخفى. القرآن يصف حالهم القلبية بدقة، لا بالمظهر فقط.</div>
+  </div>
+
+  <h3 class="section-title">أهل بدر: الثقة الإلهية المطلقة</h3>
+  <div class="evidence-block">
+    «اعملوا ما شئتم فإني قد غفرت لكم» — قالها النبي ﷺ عن أهل بدر، ليس لأن أفعالهم لا تُحاسب، بل لأن الله وثق أن مشيئتهم لن تقصد ما يغضبه بعد الآن.
+    <span class="ref">حديث نبوي عن أهل بدر</span>
+  </div>
+
+  <h3 class="section-title">الفارق الجوهري مع بني إسرائيل</h3>
+  <p>يقارن المحاضر بين تجربتين: بنو إسرائيل مع موسى عليه السلام تاهوا 40 سنة في الصحراء حتى مات جيل التربية الفرعونية بالكامل ونشأ جيل جديد على منهج النبوة. أما جيل الصحابة، فقد تحول من الجاهلية إلى الإسلام <strong>مباشرة وبسرعة</strong> دون الحاجة لجيل تربوي وسيط.</p>
+
+  <div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <tr><th>العنصر</th><th>بنو إسرائيل مع موسى</th><th>الصحابة مع محمد ﷺ</th></tr>
+      <tr><td>مدة التحول</td><td>40 سنة تيه في الصحراء</td><td>سنوات قليلة</td></tr>
+      <tr><td>الآلية</td><td>موت الجيل القديم، تربية جيل جديد من الصفر</td><td>تحوّل الأشخاص أنفسهم مباشرة</td></tr>
+      <tr><td>النتيجة</td><td>جيل جديد تمامًا يدخل الأرض المقدسة</td><td>نفس الأشخاص يصبحون "خير أمة"</td></tr>
+    </table>
+  </div>
+
+  <h3 class="section-title">"كُتب في قلوبهم الإيمان"</h3>
+  <p>الفارق ليس في الكتابة على الورق (كالمصحف أو كتب الفقه) بل في القلب ذاته. القرآن يخصّ مجموعة بعينها (أصحاب بيعة الرضوان) بوصف دقيق للحالة القلبية.</p>
+
+  <div class="evidence-block">
+    «لَقَدْ رَضِيَ اللَّهُ عَنِ الْمُؤْمِنِينَ إِذْ يُبَايِعُونَكَ تَحْتَ الشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمْ فَأَنزَلَ السَّكِينَةَ عَلَيْهِمْ وَأَثَابَهُمْ فَتْحًا قَرِيبًا»
+    <span class="ref">سورة الفتح، آية ١٨</span>
+  </div>
+
+  <div class="evidence-block">
+    «أُولَٰئِكَ كَتَبَ فِي قُلُوبِهِمُ الْإِيمَانَ»
+    <span class="ref">سورة المجادلة، آية ٢٢</span>
+  </div>
+
+  <h3 class="section-title">صفة قيام الليل: "تتجافى جنوبهم عن المضاجع"</h3>
+  <div class="evidence-block">
+    «تَتَجَافَىٰ جُنُوبُهُمْ عَنِ الْمَضَاجِعِ يَدْعُونَ رَبَّهُمْ خَوْفًا وَطَمَعًا»
+    <span class="ref">سورة السجدة، آية ١٦</span>
+  </div>
+  <p>المحاضر يشرح كلمة "تتجافى" بأنها تعني نوعًا من "الجفوة" الحسية تجاه الفراش، كأن القلب يشعر أن الله ينتظره فلا يستطيع الاستمرار في النوم.</p>
+
+  <h3 class="section-title">تحرر القلب من التعلق بالدنيا</h3>
+  <p>يضرب المحاضر مثالًا معاصرًا: شخص باع سيارة كاملة العائد المالي منها كان قادرًا على إنقاذ اقتصاد بلد بأكمله، لمجرد أنها تحمل رقم لوحة "1" (رمز مكانة اجتماعية) — وهذا هو نوع التعلق القلبي بالدنيا الذي كان الصحابة قد تحرروا منه تمامًا.</p>
+
+  <div class="warning-box">
+    <span class="wb-title">⚠️ تنبيه من المحاضر نفسه</span>
+    ينبه المحاضر صراحة أنه يحاول تقريب المعاني بأسلوب العصر، ويعتذر مسبقًا إن أخطأ في التعبير عن مقام الصحابة، لأن جلالهم يفوق أي تشبيه بسيط.
+  </div>
+
+  <h3 class="section-title">دخول الجنة بلا حساب</h3>
+  <div class="evidence-block">
+    يدخل من أمة النبي ﷺ سبعون ألفًا بغير حساب، مع كل ألف سبعون ألفًا آخرين — وهذا ليس لعدم استحقاق الحساب، بل لحياء الله من محاسبة من بلغ هذه الدرجة من التقوى.
+    <span class="ref">أحاديث نبوية مجمّعة كما ذكرها المحاضر</span>
+  </div>
+
+  <div class="lecture-summary">
+    <h4>📌 خلاصة المحاضرة الرابعة</h4>
+    <p>التحول من الجاهلية للإسلام لم يكن مجرد تغيير سلوك ظاهري، بل تحول قلبي عميق وصفه القرآن بدقة: كُتب الإيمان في القلوب، تجافت الأجساد عن الفراش شوقًا للعبادة، وتحرر القلب من التعلق بالدنيا. هذا التحول تم بسرعة استثنائية دون الحاجة لجيل تربوي وسيط كما حدث مع بني إسرائيل.</p>
+  </div>
+
+  <div class="anki-inline">
+    <button class="btn-anki-small" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</section>
+
+<!-- ============ المحاضرة 5 ============ -->
+<section class="lecture" id="l5">
+  <div class="lecture-head">
+    <div class="lecture-num">٥</div>
+    <h2><span class="icon">🕊️</span> أثر النور على الدنيا كلها</h2>
+  </div>
+
+  <p>يوضح المحاضر أن نور الإسلام لم يقتصر على تزكية قلوب الصحابة أنفسهم، بل امتد ليُصلح الدنيا كلها: الأمن، الاقتصاد، حقوق المرأة والطفل والعبد، وحرية الاعتقاد.</p>
+
+  <h3 class="section-title">الأمن: من الفوضى إلى الندرة الإحصائية للجريمة</h3>
+  <p>يقارن المحاضر بإحصائية معاصرة: قسم شرطة واحد في مصر سجّل نحو 1818 محضرًا في سنة واحدة (2007)، بينما في عهد الصحابة لم تسجَّل الدولة الإسلامية بأكملها سوى أربع سرقات في مائة سنة تقريبًا — أي جريمة واحدة كل 25 سنة تقريبًا.</p>
+
+  <div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <tr><th>المؤشر</th><th>قبل الإسلام</th><th>في عهد الصحابة</th></tr>
+      <tr><td>السرقة</td><td>منتشرة، وقطع الطريق شائع</td><td>أربع حالات فقط خلال قرن كامل تقريبًا</td></tr>
+      <tr><td>أمان المرأة المسافرة</td><td>عرضة للاعتداء والاسترقاق</td><td>تسافر وحدها في الصحراء دون خوف</td></tr>
+      <tr><td>الزكاة والفقر</td><td>تكديس الأموال دون توزيع عادل</td><td>صعوبة في إيجاد مستحقين للزكاة لكثرة الغنى العام</td></tr>
+    </table>
+  </div>
+
+  <h3 class="section-title">حرية الاعتقاد: "لا إكراه في الدين"</h3>
+  <div class="evidence-block">
+    «فَمَن شَاءَ فَلْيُؤْمِن وَمَن شَاءَ فَلْيَكْفُرْ» و«لَا إِكْرَاهَ فِي الدِّينِ»
+    <span class="ref">آيات قرآنية استشهد بها المحاضر</span>
+  </div>
+
+  <div class="example-box">
+    <span class="ex-title">مثال تطبيقي:</span> عهد سيدنا عمر بن الخطاب مع أهل كنيسة المهد في بيت لحم — رفض الصلاة داخل كنيسة القيامة خشية أن يستغل المسلمون لاحقًا صلاته ذريعة لتحويلها لمسجد، ولما صلى في كنيسة المهد خارجها، كتب لهم عهدًا مكتوبًا بألا تُحوَّل كنيستهم إلى مسجد أبدًا — وهذا العهد لا يزال محفوظًا حسب ما ذكر المحاضر.
+  </div>
+
+  <div class="definition-box">
+    <span class="term">الجزية</span>
+    ضريبة أمن قومي بسيطة (لا تتجاوز عشرة دراهم/دنانير) تؤخذ من غير المسلم القادر على القتال فقط (لا تؤخذ من امرأة أو طفل أو عاجز)، مقابل حمايته دون إلزامه بالقتال في حرب لا يؤمن بعقيدتها. المحاضر يقارنها بحادثة الملاكم محمد علي كلاي الذي سُجن في أمريكا لرفضه التجنيد الإجباري لحرب فيتنام رغم كونها "دولة حرة".
+  </div>
+
+  <h3 class="section-title">حقوق المرأة: من "لا نرى لها شيئًا" إلى الميراث والاستشارة</h3>
+  <p>يروي المحاضر واقعة أن امرأة أجارت رجلًا اختلفت فيه مع أخيها علي بن أبي طالب، فذهبت إلى النبي ﷺ وأعلن: «قد أجرنا من أجرتِ» — إقرارًا لكلمتها أمام كبار الصحابة.</p>
+
+  <div class="key-point">
+    <span class="kp-icon">💰</span>
+    <div>مثال ميراث: طفلة عمرها ستة أشهر ورثت أضعاف ما ورثه أبوها (شيخ القبيلة نفسه)، في مفارقة تامة مع "كنا لا نرى للنساء شيئًا".</div>
+  </div>
+
+  <h3 class="section-title">حقوق الطفل: راتب من لحظة الولادة</h3>
+  <p>عمر بن الخطاب لاحظ أن الأمهات كنّ يُفطمن أطفالهن مبكرًا طمعًا في الراتب الذي يُصرف بعد الفطام، فسمع بكاء الأطفال المفطومين قسرًا فقرر أن يُصرف الراتب من لحظة الولادة مباشرة لكل مولود في الدولة.</p>
+
+  <div class="action-card">
+    <span class="ac-title">✅ درس إداري (لأصحاب المشاريع)</span>
+    هذه الحادثة نموذج مبكر لما يُسمى اليوم "الإدارة القائمة على الملاحظة الميدانية": عمر لم يُقرر من مكتبه، بل لاحظ سلوك الناس الفعلي (بكاء الأطفال) واستنتج السبب الجذري (حافز مالي خاطئ) فعدّل السياسة بناءً عليه.
+  </div>
+
+  <h3 class="section-title">تحرير العبيد وكرامة الإنسان</h3>
+  <p>يروي المحاضر موقفين: الأول حين وجد النبي ﷺ صحابيًا يضرب عبده فقال له: «اعلم أن قَدَر الله عليك أعظم من قُدرتك عليه»، فأعتقه الصحابي فورًا. والثاني قصة الجارية الصغيرة التي أضاعت درهمًا وخافت العقاب، فمشى معها النبي ﷺ بنفسه إلى بيت أهلها وطلب منهم الصفح، فأعتقوها إكرامًا لشفاعته.</p>
+
+  <div class="evidence-block">
+    «أما إنك لو لم تفعل لمَسّتك النار»
+    <span class="ref">قول النبي ﷺ للصحابي الذي ضرب عبده، بعد أن أعتقه</span>
+  </div>
+
+  <h3 class="section-title">إسقاط الاستبداد: "لا سمع ولا طاعة"</h3>
+  <p>ابن عمر بن الخطاب رفض إعطاء والده زيادة على حصته في ثوب موزّع على الناس، لأن الزيادة تتجاوز ما يستحقه بالمقياس العام، فامتثل عمر رغم كونه الخليفة، قائلًا مبدأه الشهير: «إن رأيتموني على باطل فقوّموني».</p>
+
+  <div class="evidence-block">
+    قال أحد الصحابة لعمر: «والله لو وجدنا فيك اعوجاجًا لقوّمناك بسيوفنا» — وهذا يوضح أن السلطة في الإسلام محكومة بالمحاسبة الشعبية، لا فوق النقد.
+    <span class="ref">واقعة تاريخية ذكرها المحاضر</span>
+  </div>
+
+  <h3 class="section-title">قصة محمد بن مسلمة: الرقابة على الولاة</h3>
+  <p>حين بلغ عمر أن أحد الولاة جعل لقصره بابًا يحجبه عن الناس، أرسل محمد بن مسلمة الأنصاري (رئيس ما يشبه "المخابرات" آنذاك) ليحرق الباب أمام الوالي دون أن يتحدث معه — رسالة رمزية بأن الحاكم لا يُحجب عن الرعية أبدًا.</p>
+
+  <h3 class="section-title">انتشار الإسلام: القبول لا الفرض</h3>
+  <p>خلال ثمانين سنة فقط انتشر الإسلام من أقصى الشرق لأقصى الغرب، وأسقط إمبراطوريتي فارس والروم. المحاضر يؤكد أن السبب هو أن الشعوب المفتوحة استقبلت الإسلام بالترحاب (لأنها رأت العدل بنفسها)، لا بالقوة وحدها — عكس ما يحدث اليوم من مقاومة شعبية للاحتلالات العسكرية الحديثة.</p>
+
+  <div class="example-box">
+    <span class="ex-title">مثال من الأندلس:</span> يروي المحاضر زيارته لمسجد أثري في قمة جبل عالٍ بإسبانيا، بناه المسلمون خصيصًا لأجل راعٍ واحد للأغنام كان يسكن هناك، حرصًا على أن تبلغه الدعوة رغم قلة عدد المستفيدين — دليل على جدية نشر الدين لا فرضه بالقوة.
+  </div>
+
+  <h3 class="section-title">الأمية إلى محو الأمية الشامل</h3>
+  <p>يختم المحاضر بأن القراءة والكتابة كانت حكرًا على نخبة ضيقة عبر كل التاريخ البشري (حتى في عصر الفراعنة)، حتى جعلها الإسلام "كالماء والهواء" — أمرًا شعبيًا عامًا، وهذا تحول حضاري غير مسبوق.</p>
+
+  <div class="lecture-summary">
+    <h4>📌 خلاصة المحاضرة الخامسة</h4>
+    <p>نور الإسلام لم ينحصر في القلوب فحسب، بل امتد ليصلح الواقع الاجتماعي بأكمله: أمن غير مسبوق، حرية اعتقاد حقيقية، كرامة للمرأة والطفل والعبد، محاسبة الحاكم مهما علت مكانته، وانتشار طوعي بالقبول لا بالفرض. هذا هو المعيار الذي تقاس به أي "نهضة" حقيقية.</p>
+  </div>
+
+  <div class="anki-inline">
+    <button class="btn-anki-small" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</section>
+
 </main>
 
-<div class="bottom-nav">
-  <a href="../index.html">فهرس السلسلة</a>
-</div>
+<footer>
+  <p class="dua">
+    اللهم خذ بأيدينا إليك أخذ الكرام عليك،<br>
+    وأخرجنا من الظلمات إلى النور بإذنك،<br>
+    واجعل قلوبنا معلّقة بك كما علّقت قلوب أصحاب نبيك ﷺ،<br>
+    ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار
+  </p>
+  <div class="final-anki">
+    <button class="btn-anki" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+  <p class="credit">ملخّص تعليمي لسلسلة "الخطوة رقم صفر: المقدمة" — من الجاهلية الأولى إلى خير أمة أُخرجت للناس</p>
+</footer>
+
+<script>
+const ankiCards = [
+  // ===== محاضرة 1: تعريفات ومفاهيم =====
+  ["ما المقصود بـ«الجاهلية الأولى»؟", "المصطلح القرآني الذي يصف حال العرب قبل بعثة النبي ﷺ، وهي منظومة متكاملة من فساد العقيدة وقسوة القلوب والانحلال الأخلاقي والظلم الاجتماعي والاقتصادي، وليست مجرد عبادة أصنام."],
+  ["ما هو «حِلف الفضول»؟", "اتفاق عقدته قريش لمنع أخذ حق أحد بالباطل، لدوافع اقتصادية (حماية التجارة والسياحة) لا التزامًا أخلاقيًا مبدئيًا."],
+  ["ما معنى مصطلح «بيت القصيد» وما دلالته على الجاهلية؟", "البيت الوحيد المهم في قصيدة طويلة عريضة، يعكس فراغ الجاهلية الفكري حيث يُصرف جهد كبير في إسهاب أدبي بلا مضمون حقيقي."],
+  ["ما الفرق بين «عدم العلم» و«الجهل» كما بيّنه المحاضر؟", "عدم العلم هو غياب المعرفة، أما الجهل فهو معرفة الحق ورفض الاستسلام له، كحال أبي طالب وإبليس اللذين عرفا الحق ورفضاه."],
+
+  // ===== محاضرة 1: أدلة ومراجع =====
+  ["أكمل الحديث: «يُحشر المرء...»", "مع من أحب."],
+  ["ماذا قال النبي ﷺ عمن ذكر سبعة من آبائه فخرًا؟", "«لقد ذكر سبعة من آباء كلهم في النار»."],
+  ["ماذا طلب النبي ﷺ من أبي جهل في قصة الرجل صاحب الدين؟", "«رُدّ لهذا الرجل حقه»، فامتثل أبو جهل فورًا."],
+  ["ما نص الآية القرآنية عن الرشوة المالية للنساء في البغاء؟", "«ولا تُكرهوا فتياتكم على البغاء إن أردن تحصنًا»."],
+  ["ما نص الآية القرآنية عن الإيفاء بالكيل والميزان؟", "«وأوفوا الكيل ولا تكونوا من المخسرين، وزنوا بالقسطاس المستقيم»."],
+
+  // ===== محاضرة 1: فوائد ونقاط مهمة =====
+  ["كم كان الفارق الزمني بين وصف العرب بـ«الجاهلية العمياء» ووصفهم بـ«خير أمة أُخرجت للناس»؟", "نحو 23 سنة فقط (فترة نزول الوحي)."],
+  ["كيف كان الأب الجاهلي يئد ابنته؟", "يخرج بها إلى الصحراء ويدفنها حية، حاشيًا فمها وأنفها بالرمل حتى تموت."],
+  ["ما القاعدة الأساسية للظلم في الجاهلية؟", "أن القوة هي معيار الحق: «الضعيف مأكول»، ومن يملك القوة يملك الحق بصرف النظر عن العدل."],
+  ["لماذا عجزت قريش عن إيجاد مال حلال كافٍ لبناء الكعبة؟", "لأن معظم ثروات المدينة كانت متأتية من الربا والقمار وأرباح بيوت الدعارة والسرقة، فرفضوا استخدام المال الحرام في بناء بيت الله."],
+
+  // ===== محاضرة 2: تعريفات ومفاهيم =====
+  ["ما معنى «فتنة كقطع الليل المظلم» في الحديث النبوي؟", "حالة يتقلب فيها الإيمان بسرعة شديدة، يصبح فيها الرجل مؤمنًا ويمسي كافرًا أو العكس، خلال يوم واحد."],
+  ["كيف فُسّر حديث «لن تقوم الساعة حتى لا يبقى على ظهر الأرض أحد يقول: الله الله»؟", "له تفسيران: إما غياب التوحيد الكامل عن الأرض، وإما غياب الأمر بالمعروف والنهي عن المنكر."],
+
+  // ===== محاضرة 2: أدلة ومراجع =====
+  ["أكمل الحديث: «لن تقوم الساعة حتى يُعبد...»", "اللات والعزى."],
+  ["أكمل الحديث: «لن تقوم الساعة إلا على قوم هم شرار الناس، يتهارجون فيها تهارج...»", "الحُمُر."],
+  ["ماذا قال النبي ﷺ لأحد الصحابة الموحدين ليبيّن أن الجاهلية قد تتسلل لقلب المسلم؟", "«إنك امرؤ فيك جاهلية»."],
+  ["أكمل الحديث: «ثلاث من كنّ فيه كان منافقًا خالصًا...»", "ومن كانت فيه خصلة منهنّ كانت فيه خصلة من النفاق حتى يدَعها."],
+
+  // ===== محاضرة 2: فوائد ونقاط مهمة =====
+  ["ما الدليل اللغوي على أن الجاهلية قد تعود من جديد؟", "استخدام القرآن لكلمة «الأولى» في «تبرج الجاهلية الأولى»، وهذا يفترض إمكانية وجود جاهلية لاحقة."],
+  ["ما الخطأ الشائع الذي ينبّه له المحاضر بخصوص مفهوم الجاهلية؟", "تصور أن الجاهلية مرحلة تاريخية انتهت بمجيء الإسلام، بينما هي في الحقيقة منهج قد يعود في أي زمان."],
+
+  // ===== محاضرة 3: تعريفات ومفاهيم =====
+  ["ما الذي ميّز جاهلية قوم عاد؟", "الغرور بالقوة والبنيان الضخم للتباهي («لعلكم تخلدون») مع البطش الشديد بالناس."],
+  ["ما الذي ميّز جاهلية قوم ثمود؟", "نحت بيوت فاخرة داخل الجبال دون حاجة فعلية، إضاعة للأعمار في الترف بلا هدف."],
+  ["ما الذي ميّز جاهلية قوم شعيب (أصحاب الأيكة)؟", "الفساد الاقتصادي عبر التلاعب بالموازين والمكاييل وخداع الناس في المعاملات."],
+
+  // ===== محاضرة 3: أدلة ومراجع =====
+  ["ما نص الآية عن قوم عاد ووصف بنيانهم؟", "«ألم تر كيف فعل ربك بعاد. إرم ذات العماد. التي لم يُخلق مثلها في البلاد»."],
+  ["ماذا قال الصحابي عن مكانة المرأة قبل الإسلام؟", "«كنا لا نرى للنساء شيئًا»."],
+
+  // ===== محاضرة 3: فوائد ونقاط مهمة =====
+  ["كيف تعامل نساء المدينة مع فضيحة امرأة العزيز مع سيدنا يوسف؟", "دافعن عنها واعتبرن فعلها طبيعيًا ومبررًا، مما يكشف عن ثقافة مجتمعية متواطئة لا مجرد خطأ فردي."],
+  ["ما الفارق بين وضع المرأة في الميراث قبل الإسلام وبعده؟", "قبل الإسلام: لا ميراث للمرأة إطلاقًا. بعد الإسلام: ميراث مفروض شرعًا وقد يفوق نصيب أقرب الرجال في بعض الحالات."],
+
+  // ===== محاضرة 4: تعريفات ومفاهيم =====
+  ["ما معنى «تتجافى جنوبهم عن المضاجع»؟", "وصف قرآني لحالة قلبية يشعر فيها المؤمن بجفوة تجاه الفراش، لأنه يشعر أن الله ينتظره فلا يستطيع الاستمرار في النوم."],
+
+  // ===== محاضرة 4: أدلة ومراجع =====
+  ["ماذا قال النبي ﷺ عن أهل بدر؟", "«اعملوا ما شئتم فإني قد غفرت لكم»."],
+  ["ما نص الآية: «لقد رضي الله عن المؤمنين إذ يبايعونك تحت الشجرة...»؟", "فعلم ما في قلوبهم فأنزل السكينة عليهم وأثابهم فتحًا قريبًا (سورة الفتح)."],
+  ["ما نص الآية: «أولئك كتب في قلوبهم...»؟", "الإيمان (سورة المجادلة)."],
+  ["أكمل الآية: «تتجافى جنوبهم عن المضاجع يدعون ربهم...»", "خوفًا وطمعًا (سورة السجدة)."],
+
+  // ===== محاضرة 4: فوائد ونقاط مهمة =====
+  ["ما الفارق الجوهري بين تحول بني إسرائيل وتحول الصحابة؟", "بنو إسرائيل احتاجوا 40 سنة تيه حتى مات الجيل القديم ونشأ جيل جديد، بينما تحول الصحابة أنفسهم مباشرة دون جيل وسيط."],
+  ["ما دلالة دخول 70 ألفًا من الأمة الجنة بغير حساب؟", "ليست لعدم استحقاق الحساب، بل حياء من الله لمن بلغ هذه الدرجة من التقوى."],
+
+  // ===== محاضرة 5: تعريفات ومفاهيم =====
+  ["ما هي «الجزية» وما الحكمة منها؟", "ضريبة أمن قومي بسيطة تؤخذ من غير المسلم القادر على القتال فقط، مقابل حمايته دون إلزامه بالقتال في حرب لا يؤمن بعقيدتها."],
+
+  // ===== محاضرة 5: أدلة ومراجع =====
+  ["ما نص الآية: «فمن شاء فليؤمن...»؟", "ومن شاء فليكفر."],
+  ["ماذا قال النبي ﷺ للصحابي بعد أن أعتق عبده؟", "«أما إنك لو لم تفعل لمَسّتك النار»."],
+  ["ماذا قال عمر بن الخطاب في مبدأ محاسبة الحاكم؟", "«إن رأيتموني على باطل فقوّموني»."],
+  ["ماذا قال أحد الصحابة لعمر بخصوص تقويمه إن أخطأ؟", "«والله لو وجدنا فيك اعوجاجًا لقوّمناك بسيوفنا»."],
+
+  // ===== محاضرة 5: فوائد ونقاط مهمة =====
+  ["كم بلغ عدد جرائم السرقة في الدولة الإسلامية خلال مائة سنة تقريبًا في عهد الصحابة؟", "أربع سرقات فقط تقريبًا خلال قرن كامل."],
+  ["لماذا رفض عمر بن الخطاب الصلاة داخل كنيسة القيامة؟", "خشية أن يستغل المسلمون لاحقًا صلاته ذريعة لتحويل الكنيسة إلى مسجد."],
+  ["لماذا قرر عمر بن الخطاب صرف راتب الطفل من لحظة الولادة؟", "لأنه لاحظ أن الأمهات كنّ يفطمن أطفالهن قسرًا وقبل الأوان طمعًا في الراتب الذي يُصرف بعد الفطام."],
+  ["ما القصة التي توضح حرص الإسلام على نشر الدعوة حتى لأقل الناس عددًا؟", "بناء مسجد في قمة جبل عالٍ بإسبانيا (الأندلس) لأجل راعٍ واحد للأغنام، حرصًا على أن تبلغه الدعوة."],
+  ["ما الفارق بين انتشار الإسلام القديم ومقاومة الاحتلالات العسكرية الحديثة؟", "الإسلام انتشر بالقبول والترحاب الشعبي لأن الناس رأوا العدل بأنفسهم، بينما تُقابل الاحتلالات الحديثة بمقاومة شعبية."],
+  ["ما الذي حوّله الإسلام من امتياز نخبوي إلى أمر شعبي عام؟", "القراءة والكتابة، إذ جعلها «كالماء والهواء» بعد أن كانت حكرًا على فئة ضيقة عبر كل التاريخ البشري."]
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_الجاهلية_الأولى.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
 
 </body>
 </html>
